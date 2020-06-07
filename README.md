@@ -1,8 +1,12 @@
 [![Gitter](https://badges.gitter.im/Bookomate/community.svg)](https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-[logo](assets/logo.png)
+<h1 align="center">
+  <img src="https://github.com/Bookomate/bookomate/blob/master/assets/bookomate.png" >
+</h1>
+
 ## What is Bookomate?
-- This project is inspired by Bookomatic project: https://github.com/KalleHallden/BookOmatic and created to be frequently updated and keep contributors closer :)
+- BookOMate aims at simplifying peer-to-peer calendar booking, with an intuitive design and lightning speed functionality. Also, some integration to existing popular calendar apps.
+- This project is inspired by Bookomatic project: https://github.com/KalleHallden/BookOmatic and created to be continously updated and completely open-source. Contributions welcomed :)
 
 Coming soon!
 
