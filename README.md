@@ -1,7 +1,7 @@
 [![Gitter](https://badges.gitter.im/Bookomate/community.svg)](https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 <h1 align="center">
-  <img src="https://github.com/Bookomate/bookomate/blob/master/assets/bookomate.png" >
+  <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/assets/bookomate.png" >
 </h1>
 
 ## What is Bookomate?
