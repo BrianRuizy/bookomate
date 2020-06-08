@@ -1,8 +1,14 @@
-[![Gitter](https://badges.gitter.im/Bookomate/community.svg)](https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/assets/bookomate.png" >
 </h1>
+
+<p align="center">
+    <a href="https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+        <img src="https://badges.gitter.im/Bookomate/community.svg">
+    </a>
+</p>
 
 ## What is Bookomate?
 - BookOMate aims at simplifying peer-to-peer calendar booking, with an intuitive design and lightning speed functionality. Also, some integration to existing popular calendar apps.
