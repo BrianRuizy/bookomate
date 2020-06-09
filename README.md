@@ -1,7 +1,7 @@
 
 
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/assets/bookomate.png" ></br>
+  <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/assets/banner.png" ></br>
   <a href="https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
         <img src="https://badges.gitter.im/Bookomate/community.svg">
     </a>
