@@ -1,13 +1,17 @@
 
 
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/assets/bookomate.png" >
+  <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/assets/bookomate.png" ></br>
+  <a href="https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+        <img src="https://badges.gitter.im/Bookomate/community.svg">
+    </a>
+    <a href="https://travis-ci.com/github/Bookomate/bookomate">
+        <img src="https://travis-ci.com/Bookomate/bookomate.svg?branch=master">
+    </a>
 </h1>
 
 <p align="center">
-    <a href="https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
-        <img src="https://badges.gitter.im/Bookomate/community.svg">
-    </a>
+    
 </p>
 
 ## What is Bookomate?
