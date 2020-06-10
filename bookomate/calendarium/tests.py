@@ -1,9 +1,16 @@
 from django.test import TestCase
+from django.urls import reverse
 
 
 class TestCalendarView(TestCase):
     def test_access(self):
-        response = self.client.get('', follow=True)
+        response = self.client.get(reverse('home'), follow=True)
+        self.assertEqual(response.status_code, 200)
+
+        response = self.client.get(reverse('calendar_view'), follow=True)
+        self.assertEqual(response.status_code, 200)
+
+        response = self.client.get(reverse('calendar_view', kwargs={'year': 2020, 'month': 10}), follow=True)
         self.assertEqual(response.status_code, 200)
 
 
