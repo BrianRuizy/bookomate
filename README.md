@@ -45,7 +45,13 @@ env/Scripts/activate  # Windows
 pip install -r requirements.txt
 ```
 
-4. Run local server to verify, and **DONE**!
+4. Migrate your database
+
+```
+python manage.py migrate
+```
+
+5. Run local server to verify, and **DONE**!
 
 ```bash
 python manage.py runserver
