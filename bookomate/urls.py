@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('calendar/', include('bookomate.calendarium.urls')),
+    path('', include('bookomate.calendarium.urls')),
     path('admin/', admin.site.urls),
 ]
