@@ -1,0 +1,23 @@
+language: python
+
+services:
+  - postgresql
+
+python:
+  - 3.8
+
+env:
+  - DJANGO=3.0.7 DB=postgres
+
+before_install:
+  - export DJANGO_SETTINGS_MODULE=bookomate.settings.travis
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - psql -c 'create database travis_ci_db;' -U postgres
+  - python manage.py migrate
+
+script:
+  - python manage.py test
