@@ -173,3 +173,8 @@ dmypy.json
 env
 .env
 env/
+
+# VS Code
+.vscode/settings.json
+.vscode/
+.vscode
