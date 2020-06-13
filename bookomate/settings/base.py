@@ -123,3 +123,9 @@ STATIC_URL = '/static/'
 # Redirect home
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+# SMTP Server
+# This local email directory is for development ONLY
+# Please resort to integrating an email service, I.e. MailGun, SendGrid
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
