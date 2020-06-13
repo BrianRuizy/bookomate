@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookomate.calendarium',
-    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +55,7 @@ ROOT_URLCONF = 'bookomate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,13 +119,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Redirect home
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-
-# SMTP Server
-# This local email directory is for development ONLY
-# Please resort to integrating an email service, I.e. MailGun, SendGrid
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
