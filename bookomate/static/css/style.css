@@ -1,0 +1,31 @@
+/* for debugging, uncomment
+* {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+}*/
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    top: 0;
+    left: 0;
+}
+
+html, body {
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+/* ------------------------- All -------------------------------------------------- */
+
+.section {
+    float: left;
+    width: 100%;
+    position: relative;
+    background: #f1f1f1;
+}

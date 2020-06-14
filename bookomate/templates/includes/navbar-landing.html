@@ -1,0 +1,24 @@
+<!-- Navbar, landing page-->
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <a class="navbar-brand" href="/">
+        <img src="../../static/assets/logo/logo.png" alt="Logo">
+    </a>
+
+    <!-- mobile nav toggler -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#integrations">Integrations</a></li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <a class="nav-link text-muted" href="{% url 'login' %}">Login</a>
+            <a class="btn btn-primary text-white" role="button" href="{% url 'signup' %}">Signup</a>
+        </form>
+    </div>
+</nav>
