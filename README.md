@@ -16,6 +16,10 @@
 Coming soon!
 
 ## Installation
+### Dependencies
+These things will need to be installed before developing BookOMate. 
+- **PostgreSQL** Is the database used by BookOMate and installation of python dependencies will not work if (PostgreSQL)[https://www.postgresql.org/download/] is not installed. 
+On Mac Postgresql can be installed using brew. ```brew install postgresql```
 
 Get the project running, and start coding in just 5 quick steps.
 
@@ -59,7 +63,6 @@ Get the project running, and start coding in just 5 quick steps.
    Starting development server at http://127.0.0.1:8000/
    Quit the server with CONTROL-C.
    ```
-
 ## Contribution
 
 Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
