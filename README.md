@@ -11,15 +11,20 @@
 ## What is Bookomate?
 
 - BookOMate aims at simplifying peer-to-peer calendar booking, with an intuitive design and lightning speed functionality. Also, some integration to existing popular calendar apps.
-- This project is inspired by Bookomatic project: https://github.com/KalleHallden/BookOmatic and created to be continously updated and completely open-source. Contributions welcomed :)
+- This project is inspired by Bookomatic project: https://github.com/KalleHallden/BookOmatic and created to be continuously updated and completely open-source. Contributions welcomed :)
 
 Coming soon!
 
 ## Installation
+### Dependencies
+These things will need to be installed before developing BookOMate.
+- **PostgreSQL** Is the database used by BookOMate and installation of python dependencies will not work if [PostgreSQL](https://www.postgresql.org/download/) is not installed.
+On Mac Postgresql can be installed using brew ```brew install postgresql```. Windows users can install it with the installer ensuring that postgresql is added to the system path.
 
+### Environment Setup
 Get the project running, and start coding in just 5 quick steps.
 
-1. [Fork](https://github.com/Bookomate/bookomate/fork) this repository and 
+1. [Fork](https://github.com/Bookomate/bookomate/fork) this repository and
    [Clone](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone) to your   local machine. Then  **cd** into the project
 
    ```bash
@@ -37,7 +42,7 @@ Get the project running, and start coding in just 5 quick steps.
    env/Scripts/activate  # Windows
    ```
 
-3. Install dependencies
+3. Install dependancies
 
    ```bash
    pip install -r requirements.txt
@@ -59,7 +64,6 @@ Get the project running, and start coding in just 5 quick steps.
    Starting development server at http://127.0.0.1:8000/
    Quit the server with CONTROL-C.
    ```
-
 ## Contribution
 
 Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.

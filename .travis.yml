@@ -8,6 +8,7 @@ python:
 
 env:
   - DJANGO=3.0.7 DB=postgres
+  - SECRET_KEY="irrelevant"
 
 before_install:
   - export DJANGO_SETTINGS_MODULE=bookomate.settings.travis
