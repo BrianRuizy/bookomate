@@ -21,6 +21,7 @@ These things will need to be installed before developing BookOMate.
 - **PostgreSQL** Is the database used by BookOMate and installation of python dependencies will not work if [PostgreSQL](https://www.postgresql.org/download/) is not installed.
 On Mac Postgresql can be installed using brew ```brew install postgresql```. Windows users can install it with the installer ensuring that postgresql is added to the system path.
 
+### Environment Setup
 Get the project running, and start coding in just 5 quick steps.
 
 1. [Fork](https://github.com/Bookomate/bookomate/fork) this repository and
