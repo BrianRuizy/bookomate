@@ -6,12 +6,9 @@ services:
 python:
   - 3.8
 
-env:
-  - DJANGO=3.0.7 DB=postgres
-  - SECRET_KEY="irrelevant"
-
 before_install:
   - export DJANGO_SETTINGS_MODULE=bookomate.settings.travis
+  - export SECRET_KEY="irrelevant"
 
 install:
   - pip install -r requirements.txt
@@ -22,3 +19,6 @@ before_script:
 
 script:
   - python manage.py test
+
+after_script:
+  - bash <(curl -s https://codecov.io/bash)

@@ -21,3 +21,5 @@ sqlparse==0.3.1
 urllib3==1.25.8
 Werkzeug==1.0.0
 psycopg2
+python-decouple
+dj-database-url
