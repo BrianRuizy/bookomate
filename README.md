@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/assets/banner.png" ></br>
+  <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/bookomate/static/assets/logo/banner.png" ></br>
   <a href="https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
         <img src="https://badges.gitter.im/Bookomate/community.svg">
     </a>
@@ -42,7 +42,7 @@ Get the project running, and start coding in just 5 quick steps.
    env/Scripts/activate  # Windows
    ```
 
-3. Install dependancies
+3. Install dependencies
 
    ```bash
    pip install -r requirements.txt

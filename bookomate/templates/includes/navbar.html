@@ -1,7 +1,7 @@
 <!-- Navbar, authenticated-->
 <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
     <a class="navbar-brand" href="/">
-        <img src="../../static/assets/logo/logo.png" alt="Logo">
+        <img src="https://raw.githubusercontent.com/BrianRuizy/bookomate/master/bookomate/static/assets/logo/logo.png" width="150" alt="Logo">
     </a>
 
     <!-- mobile nav toggler -->
@@ -21,8 +21,8 @@
                     My Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                    <a class="dropdown-item" href="{% url 'password_reset' %}">reset password</a>
+                    <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                    <a class="dropdown-item" href="{% url 'account_reset_password' %}">reset password</a>
                 </div>
             </div>
         </form>

@@ -1,7 +1,9 @@
 <!-- Navbar, landing page-->
+{% load socialaccount %}
+
 <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
     <a class="navbar-brand" href="/">
-        <img src="../../static/assets/logo/logo.png" alt="Logo">
+        <img src="https://raw.githubusercontent.com/BrianRuizy/bookomate/master/bookomate/static/assets/logo/logo.png" width="150" alt="Logo">
     </a>
 
     <!-- mobile nav toggler -->
@@ -17,8 +19,8 @@
             <li class="nav-item"><a class="nav-link" href="#integrations">Integrations</a></li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-            <a class="nav-link text-muted" href="{% url 'login' %}">Login</a>
-            <a class="btn btn-primary text-white" role="button" href="{% url 'signup' %}">Signup</a>
+            <a class="nav-link text-muted" href="{% url 'account_login' %}">Login</a>
+            <a class="btn btn-primary text-white" role="button" href="{% url 'account_signup' %}">Signup</a>
         </form>
     </div>
 </nav>
