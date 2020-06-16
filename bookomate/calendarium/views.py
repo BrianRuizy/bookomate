@@ -17,5 +17,15 @@ def calendar_view(request, year: int = None, month: int = None):
     _now = datetime.now()
     html = _calendar.formatmonth(theyear=year, themonth=month, withyear=True)
     html = html.replace('<td ', '<td  width="250" height="200"')
-    params = {"calendar": mark_safe(html), "year": year, "next_month": month + 1, "prev_month": month - 1}
+    prev_year = year
+    next_year = year
+    prev_month = month - 1
+    next_month = month + 1
+    if month == 12:
+        next_year = next_year + 1
+        next_month = 1
+    elif month == 1:
+        prev_year = prev_year - 1
+        prev_month = 12
+    params = {"calendar": mark_safe(html), "next_year": next_year, "prev_year": prev_year, "next_month": next_month, "prev_month": prev_month}
     return render(request, "calendarium/calendar.html", params)
