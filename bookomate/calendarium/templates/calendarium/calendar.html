@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<a href="{% url 'calendar_view' year prev_month %}">Previous month</a>
-<a href="{% url 'calendar_view' year next_month%}">Next month</a>
+<a href="{% url 'calendar_view' prev_year prev_month %}">Previous month</a>
+<a href="{% url 'calendar_view' next_year next_month%}">Next month</a>
 {{ calendar }}
 </body>
 </html>
