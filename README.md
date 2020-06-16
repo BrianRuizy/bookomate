@@ -39,7 +39,7 @@ Get the project running, and start coding in just 5 quick steps.
    python -m venv env
 
    source env/bin/activate  # Linux/Mac
-   env/Scripts/activate  # Windows
+   env\Scripts\activate  # Windows
    ```
 
 3. Install dependencies

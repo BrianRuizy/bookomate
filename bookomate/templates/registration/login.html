@@ -1,0 +1,33 @@
+<!-- templates/registration/login.html -->
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock title %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="spacer-row"><div class="col-12"></div></div>
+        <div class="row">
+            <div class="col-md-6 col-sm-8 col-xs-9 mx-auto">
+                <form>
+                    <div class="text-center">
+                        <img class="blue-box-logo" src="../../static/assets/logo/logo.png" alt="Logo">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="PasswordInput" placeholder="Password">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <small class="form-text text-muted"><a href="#">Forgot password?</a></small>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
