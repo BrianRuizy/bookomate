@@ -47,14 +47,34 @@ Get the project running, and start coding in just 5 quick steps.
    ```bash
    pip install -r requirements.txt
    ```
+4. Make sure you create file `.env` in the root directory of the project using `.env.template` guide and update the values of corresponding environment variables
 
-4. Migrate your database
+   or
+
+    make sure you exported the following environment variables
+
+   For Linux/Mac use:
+
+   ```
+   export DEBUG=<True or False>
+   export SECRET_KEY='PUT-YOUR-SECRET-KEY-HERE'
+   export DATABASE_URL='postgres://USER:PASSWORD@HOST:PORT/DB_NAME'
+   ```
+   For Windows use:
+
+   ```
+   set DEBUG=<True or False>
+   set SECRET_KEY='PUT-YOUR-SECRET-KEY-HERE'
+   set DATABASE_URL='postgres://USER:PASSWORD@HOST:PORT/DB_NAME'
+   ```
+
+5. Migrate your database
 
    ```bash
    python manage.py migrate
    ```
 
-5. Run local server to verify, and **DONE**!
+6. Run local server to verify, and **DONE**!
 
    ```bash
    python manage.py runserver
