@@ -87,3 +87,9 @@ Get the project running, and start coding in just 5 quick steps.
 ## Contribution
 
 Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
+
+### Contributors
+
+This project exists thanks to all the people who [contribute](CONTRIBUTING.md)!
+
+[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/0)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/0)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/1)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/1)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/2)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/2)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/3)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/3)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/4)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/4)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/5)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/5)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/6)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/6)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/7)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/7)
