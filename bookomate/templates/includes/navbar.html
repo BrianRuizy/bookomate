@@ -18,7 +18,8 @@
             
             <div class="dropdown show">
                 <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My Account
+                    <i class="fas fa-user-circle"></i>&nbsp;{{ user.first_name | default:user.username}}
+                    
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item text-muted" href="{% url 'account_reset_password' %}"><i class="fas fa-cog"></i>&nbsp;&nbsp; Settings</a>
