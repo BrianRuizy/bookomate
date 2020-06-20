@@ -47,14 +47,34 @@ Get the project running, and start coding in just 5 quick steps.
    ```bash
    pip install -r requirements.txt
    ```
+4. Make sure you create file `.env` in the root directory of the project using `.env.template` guide and update the values of corresponding environment variables
 
-4. Migrate your database
+   or
+
+    make sure you exported the following environment variables
+
+   For Linux/Mac use:
+
+   ```
+   export DEBUG=<True or False>
+   export SECRET_KEY='PUT-YOUR-SECRET-KEY-HERE'
+   export DATABASE_URL='postgres://USER:PASSWORD@HOST:PORT/DB_NAME'
+   ```
+   For Windows use:
+
+   ```
+   set DEBUG=<True or False>
+   set SECRET_KEY='PUT-YOUR-SECRET-KEY-HERE'
+   set DATABASE_URL='postgres://USER:PASSWORD@HOST:PORT/DB_NAME'
+   ```
+
+5. Migrate your database
 
    ```bash
    python manage.py migrate
    ```
 
-5. Run local server to verify, and **DONE**!
+6. Run local server to verify, and **DONE**!
 
    ```bash
    python manage.py runserver
@@ -67,3 +87,9 @@ Get the project running, and start coding in just 5 quick steps.
 ## Contribution
 
 Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
+
+### Contributors
+
+This project exists thanks to all the people who [contribute](CONTRIBUTING.md)!
+
+[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/0)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/0)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/1)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/1)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/2)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/2)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/3)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/3)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/4)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/4)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/5)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/5)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/6)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/6)[![](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/images/7)](https://sourcerer.io/fame/BrianRuizy/BrianRuizy/bookomate/links/7)
