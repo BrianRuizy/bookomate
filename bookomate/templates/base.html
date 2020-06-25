@@ -9,8 +9,11 @@
         <title>BookOMate</title>
 
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://kit.fontawesome.com/189832a678.js" crossorigin="anonymous"></script>
+
+        <!--To be removed when the block stylesheets are working: -->
+        <link rel="stylesheet" href="{% static 'css/login-style.css' %}">
         
         <!-- Specific CSS goes HERE -->
         {% block stylesheets %}
@@ -18,10 +21,10 @@
     </head>
 
     <body>
-        <main>
+
             {% block content %}
             {% endblock content %}
-        </main>
+
         {% include "includes/footer.html" %}
         {% include "includes/scripts.html" %}
         {% block javascripts %}
@@ -29,3 +32,4 @@
         {% endblock javascripts %}
     </body>
 </html>
+

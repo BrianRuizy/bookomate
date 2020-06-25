@@ -40,10 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google', 
+    'allauth.socialaccount.providers.facebook', 
     
     # custom apps go here...
     'bookomate.accounts',
@@ -127,6 +130,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# This points the django's static file manager to where the static files are stored
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 # SMTP Server
 # This local email directory is for development ONLY

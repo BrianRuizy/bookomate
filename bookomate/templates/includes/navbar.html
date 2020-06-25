@@ -1,5 +1,5 @@
 <!-- Navbar, authenticated-->
-<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white slide-in-top">
     <a class="navbar-brand" href="/">
         <img src="https://raw.githubusercontent.com/BrianRuizy/bookomate/master/bookomate/static/assets/logo/logo.png" width="150" alt="Logo">
     </a>
@@ -11,18 +11,21 @@
     </button>
     
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto mr-3">
             <a>help</a>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
             
             <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My Account
+                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle"></i>&nbsp;{{ user.first_name | default:user.username}}
+                    
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                    <a class="dropdown-item" href="{% url 'account_reset_password' %}">reset password</a>
+                    <a class="dropdown-item text-muted" href="{% url 'account_reset_password' %}"><i class="fas fa-cog"></i>&nbsp;&nbsp; Settings</a>
+                    <a class="dropdown-item" href="{% url 'account_reset_password' %}"><i class="fas fa-user-lock"></i>&nbsp; Reset Password</a>
+                    <hr>
+                    <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp; Logout</a>
                 </div>
             </div>
         </form>

@@ -1,7 +1,6 @@
 <!-- Navbar, landing page-->
 {% load socialaccount %}
-
-<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white slide-in-top">
     <a class="navbar-brand" href="/">
         <img src="https://raw.githubusercontent.com/BrianRuizy/bookomate/master/bookomate/static/assets/logo/logo.png" width="150" alt="Logo">
     </a>
@@ -13,14 +12,16 @@
     </button>
     
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
             <li class="nav-item"><a class="nav-link" href="#integrations">Integrations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#code">Code</a></li>
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <a class="nav-link text-muted" href="{% url 'account_login' %}">Login</a>
-            <a class="btn btn-primary text-white" role="button" href="{% url 'account_signup' %}">Signup</a>
-        </form>
+        <!-- <form class="form-inline mt-2 mt-md-0">
+            <a class="btn btn-outline-info text-info mr-3 px-4" role="button" href="{% url 'account_login' %}">LogIn</a>
+            <a class="btn btn-info text-white px-3" role="button" href="{% url 'account_signup' %}">Sign up</a>
+        </form> -->
     </div>
 </nav>
