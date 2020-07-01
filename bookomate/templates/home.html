@@ -9,7 +9,7 @@
         {% include "includes/navbar.html" %}
         <div class="section">
             <div class="container col-9" style="margin-top: 5em">
-                <h2>Welcome, {{ user.username }}</h2>
+                <h2>Welcome, {{  user.first_name | default:user.username }}</h2>
                 <p>Place calendar/actions here!!</p>
             </div>
         </div>
