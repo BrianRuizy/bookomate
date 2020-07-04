@@ -1,0 +1,9 @@
+<!-- social authentications -->
+{% load account socialaccount %}
+
+<div class="social-login mb-4">
+    <a class="font-weight-light pr-2">Or login with:</a>
+    <a href="{% provider_login_url 'github' %}"><i class="fa fa-github mr-2 text-black" style="font-size:24px;"></i></a>
+    <a href="{% provider_login_url 'google' %}"><i class="fa fa-google mr-2 text-danger"style="font-size:24px;"></i></a>
+    <a href="{% provider_login_url 'facebook' %}"><i class="fa fa-facebook" style="font-size:24px; color:#4267B2"></i></a>
+</div>

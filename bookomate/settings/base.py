@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google', 
     'allauth.socialaccount.providers.facebook', 
+    'crispy_forms',
+    
     
     # custom apps go here...
     'bookomate.accounts',
@@ -154,3 +156,5 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # Redirect home
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
