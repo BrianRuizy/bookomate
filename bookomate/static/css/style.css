@@ -1,4 +1,5 @@
-/* for debugging, uncomment
+/*
+for debugging, uncomment
 * {
     background: #000 !important;
     color: #0f0 !important;
@@ -11,6 +12,7 @@ body {
     top: 0;
     left: 0;
     color: #fff;
+    overflow: hidden;
 }
 
 html,
@@ -33,6 +35,11 @@ footer {
     left: 0px;
     bottom: 0px;
     width: 100%;
+}
+
+.smooth-scroll-container {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .bg-black {
