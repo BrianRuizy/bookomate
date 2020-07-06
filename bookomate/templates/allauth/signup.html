@@ -21,15 +21,13 @@
                         </div>
                         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                             {% csrf_token %}
-                            {% for field in form %}
-                                {{ field | as_crispy_field  }}
-                            {% endfor %}
+                            {{ form | crispy }}
+
                             
                             {% if redirect_field_value %}
                             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                             {% endif %}
-                            <button type="submit"
-                                class="btn btn-block login-btn primaryAction mt-4">{% trans "Sign Up" %}</button>
+                            <button type="submit" class="btn btn-block login-btn primaryAction mt-4">{% trans "Sign Up" %}</button>
                             <hr class="my-4">
                         </form>
                         {% include "allauth/social_login.html" %}
