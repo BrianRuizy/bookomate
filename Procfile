@@ -1,1 +1,1 @@
-web: gunicorn bookomate.wsgi —-log-file -
+web: gunicorn bookomate.wsgi --log-file=- 
