@@ -143,7 +143,7 @@ STATIC_URL = '/static/'
 
 # This points the django's static file manager to where the static files are stored
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'bookomate/static'),
 ]
 
 # SMTP Server
