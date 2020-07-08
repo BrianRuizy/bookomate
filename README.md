@@ -1,14 +1,19 @@
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/bookomate/static/assets/logo/banner.png" ></br>
+  
   <a href="https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
-        <img src="https://badges.gitter.im/Bookomate/community.svg">
+        <img src="https://img.shields.io/badge/Chat-Gitter-ff69b4.svg?label=Chat&logo=gitter">
     </a>
     <a href="https://travis-ci.com/github/Bookomate/bookomate">
-        <img src="https://travis-ci.com/Bookomate/bookomate.svg?branch=master">
+        <img src="https://img.shields.io/travis/TheAlgorithms/Python.svg?label=Travis%20CI&logo=travis">
+    </a>
+    <a href="https://github.com/Bookomate/bookomate/blob/master/CONTRIBUTING.md">
+        <img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3">
     </a>
 </h1>
 
-## What is Bookomate?
+
+# Bookomate?
 
 - BookOMate aims at simplifying peer-to-peer calendar booking, with an intuitive design and lightning speed functionality. Also, some integration to existing popular calendar apps.
 - This project is inspired by Bookomatic project: https://github.com/KalleHallden/BookOmatic and created to be continuously updated and completely open-source. Contributions welcomed :)
@@ -16,12 +21,15 @@
 Coming soon!
 
 ## Installation
+
 ### Dependencies
+
 These things will need to be installed before developing BookOMate.
 - **PostgreSQL** Is the database used by BookOMate and installation of python dependencies will not work if [PostgreSQL](https://www.postgresql.org/download/) is not installed.
 On Mac Postgresql can be installed using brew ```brew install postgresql```. Windows users can install it with the installer ensuring that postgresql is added to the system path.
 
 ### Environment Setup
+
 Get the project running, and start coding in just 5 quick steps.
 
 1. [Fork](https://github.com/Bookomate/bookomate/fork) this repository and
@@ -47,6 +55,7 @@ Get the project running, and start coding in just 5 quick steps.
    ```bash
    pip install -r requirements.txt
    ```
+
 4. Make sure you create file `.env` in the root directory of the project using `.env.template` guide and update the values of corresponding environment variables
 
    or
@@ -84,6 +93,7 @@ Get the project running, and start coding in just 5 quick steps.
    Starting development server at http://127.0.0.1:8000/
    Quit the server with CONTROL-C.
    ```
+
 ## Contribution
 
 Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.

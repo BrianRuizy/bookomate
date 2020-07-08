@@ -1,66 +1,44 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
 
 <main class="d-flex align-items-center min-vh-100 py-3 py-md-0" style="background-color:#e0e0de;">
-  <div class="container">
-    <div class="card login-card slide-in-bck-tl">
-      <div class="row no-gutters">
-        <div class="col-md-5">
-            <img src="https://images.unsplash.com/photo-1557996133-ee6d20a488fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
-                alt="login" class="login-card-img">
-        </div>
-        <div class="col-md-7">
-          <div class="card-body">
-            <div class="brand-wrapper">
-              <img src="../../static/assets/logo/logo.png" alt="logo" class="logo">
+    <div class="container">
+        <div class="card login-card slide-in-bck-tl">
+            <div class="row no-gutters">
+                <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1557996133-ee6d20a488fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="login" class="login-card-img">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <div class="brand-wrapper">
+                            <img src="../../static/assets/logo/logo.png" alt="logo" class="logo">
+                        </div>
+                        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+
+                            
+                            {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            {% endif %}
+                            <button type="submit" class="btn btn-block login-btn primaryAction mt-4">{% trans "Sign Up" %}</button>
+                            <hr class="my-4">
+                        </form>
+                        {% include "allauth/social_login.html" %}
+                        <a href="{% url 'account_reset_password' %}" class="button secondaryAction forgot-password-link" >{% trans "Forgot Password?" %}</a><br>
+                        <p class="font-weight-light">{% blocktrans %}Already have an account? 
+                            <a class="text-reset" href="{{ login_url }}"><u>Log in</u></a>.{% endblocktrans %}
+                        </p>
+                    </div>
+                </div>
             </div>
-            <h1>{% trans "Sign Up" %}</h1>
-
-            <p>{% blocktrans %}Already have an account? Please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-              {% csrf_token %}
-              <!-- {{ form.as_p }} -->
-              <!--
-                Username
-                Email (optional)
-                password
-                password (again)
-              -->
-              <div class="form-group mb-2 {% if form.signup.errors %}has-error{% endif %}">
-                <label for="id_signup" class="sr-only"></label>
-                <input type="text" name="login" placeholder="Username" class="form-control" autofocus="autofocus" maxlength="150" required="" id="id_signup">
-              </div>
-              <div class="form-group mb-2 {% if form.signup.errors %}has-error{% endif %}">
-                <label for="id_email" class="sr-only"></label>
-                <input type="email" name="email" placeholder="Email (optional)" class="form-control" autofocus="autofocus" maxlength="150" id="id_email">
-              </div>
-              <div class="form-group mb-4 {% if form.password.errors %}has-error{% endif %}">
-                <label for="id_password" class="sr-only"></label>
-                <input type="password" name="password" class="form-control" placeholder="Password" required="" id="id_password">
-              </div>
-              <div class="form-group mb-4 {% if form.password.errors %}has-error{% endif %}">
-                <label for="id_password" class="sr-only"></label>
-                <input type="password" name="copnfirm-password" class="form-control" placeholder="Confirm Password" required="" id="id_confirm_password">
-              </div>
-
-              {% if redirect_field_value %}
-              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-              {% endif %}
-              <button type="submit" class="btn btn-block login-btn primaryAction">{% trans "Sign Up" %}</button>
-            </form>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </main>
-                
-                  
-
 {% endblock %}
