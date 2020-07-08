@@ -1,15 +1,17 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/bookomate/static/assets/logo/banner.png" ></br>
-  
-  <a href="https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
-        <img src="https://img.shields.io/badge/Chat-Gitter-ff69b4.svg?label=Chat&logo=gitter">
+   <img src="https://raw.githubusercontent.com/Bookomate/bookomate/master/bookomate/static/assets/logo/banner.png" ></br>
+   <a href="https://gitter.im/Bookomate/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+      <img src="https://img.shields.io/badge/Chat-Gitter-ff69b4.svg?label=Chat&logo=gitter">
+   </a>
+   <a href="https://travis-ci.com/github/Bookomate/bookomate">
+      <img src="https://img.shields.io/travis/TheAlgorithms/Python.svg?label=Travis%20CI&logo=travis">
+   </a>
+   <a href="https://stats.uptimerobot.com/A9o1Ac9l6L">
+      <img alt="Uptime Robot status" src="https://img.shields.io/uptimerobot/status/m785527224-227cbcf616fa62639c11d308?label=UptimeRobot">
     </a>
-    <a href="https://travis-ci.com/github/Bookomate/bookomate">
-        <img src="https://img.shields.io/travis/TheAlgorithms/Python.svg?label=Travis%20CI&logo=travis">
-    </a>
-    <a href="https://github.com/Bookomate/bookomate/blob/master/CONTRIBUTING.md">
-        <img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3">
-    </a>
+   <a href="https://github.com/Bookomate/bookomate/blob/master/CONTRIBUTING.md">
+      <img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3">
+   </a>
 </h1>
 
 
