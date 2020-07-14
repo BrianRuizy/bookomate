@@ -1,13 +1,11 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
-{% load account socialaccount %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-{% get_providers as socialaccount_providers %}
-
 <main class="section section-login d-flex align-items-center" style="background-color:#e0e0de;">
     <div class="container">
         <div class="card login-card slide-in-top">
@@ -21,50 +19,25 @@
                         <div class="brand-wrapper mx-auto">
                             <img src="../../static/assets/logo/logo.png" alt="logo" class="logo">
                         </div>
-                        <form class="django-login" method="POST" action="{% url 'account_login' %}">
+                        <form class="login" method="POST" action="{% url 'account_login' %}">
                             {% csrf_token %}
-                            <div class="alert-warning m-1">
-                                <small><ul class="alert-message">
-                                    {% for error in form.non_field_errors %}
-                                    <li>{{ error }}</li>
-                                    {% endfor %}
-                                </ul></small>
-                            </div>
-                            <div class="form-group mb-2 {% if form.login.errors %}has-error{% endif %}">
-                                <label for="id_login" class="sr-only"></label>
-                                <input type="text" name="login" placeholder="Username" class="form-control" autofocus="autofocus" maxlength="150" required="" id="id_login">
-                            </div>
-                            <div class="form-group mb-4 {% if form.password.errors %}has-error{% endif %}">
-                                <label for="id_password" class="sr-only"></label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" required="" id="id_password">
-                            </div>
+                            {{ form | crispy }}
                             
-                            <button type="submit" class="btn btn-block login-btn primaryAction">{% trans "Login" %}</button>
                             {% if redirect_field_value %}
                             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                             {% endif %}
+                            <button type="submit" class="btn btn-block login-btn primaryAction mt-4">{% trans "Log in" %}</button>
                         <hr class="my-4">
                         </form>
-                        <div class="social-login mb-5">
-                            <a class="font-weight-light pr-2">Or login with:</a>
-                            <a href="{% provider_login_url 'github' %}"><i class="fa fa-github mr-2 text-black" style="font-size:24px;"></i></a>
-                            <a href="{% provider_login_url 'google' %}"><i class="fa fa-google mr-2 text-danger"style="font-size:24px;"></i></a>
-                            <a href="{% provider_login_url 'facebook' %}"><i class="fa fa-facebook" style="font-size:24px; color:#4267B2"></i></a>
-                        </div>
-                        <a href="{% url 'account_reset_password' %}" class="button secondaryAction forgot-password-link  " >{% trans "Forgot Password?" %}</a><br>
-                        <a href="{{ signup_url }}" class="text-reset font-weight-light"><u>Create an account</u></a>
+                        {% include "allauth/social_login.html" %}
+                        <a href="{% url 'account_reset_password' %}" class="button secondaryAction forgot-password-link" >{% trans "Forgot Password?" %}</a><br>
+                        <p class="font-weight-light">{% blocktrans %}Need an account?
+                            <a class="text-reset" href="{{ signup_url }}"><u>Sign up</u></a>.{% endblocktrans %}
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
-
-<!-- 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form.as_p }} 
-
-</form> -->
-
 {% endblock %}
