@@ -4,14 +4,13 @@
 {% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
-
-{% block content %}
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
     function onSubmit(token) {
         document.getElementById("SignUp").submit();
     }
 </script>
+{% block content %}
 <main class="d-flex align-items-center min-vh-100 py-3 py-md-0" style="background-color:#e0e0de;">
     <div class="container">
         <div class="card login-card slide-in-bck-tl">
