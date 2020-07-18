@@ -6,7 +6,7 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 <script>
     function onSubmit(token) {
-        document.getElementById("demo-form").submit();
+        document.getElementById("LoginIn").submit();
     }
 </script>
 {% block content %}
@@ -30,7 +30,7 @@
                             {% if redirect_field_value %}
                             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                             {% endif %}
-                            <button type="submit" class="btn btn-block login-btn primaryAction mt-4g-recaptcha" data-sitekey="6LcN6bEZAAAAAARRmS9wQ51z5dG5JdWyhxbPRBjA" data-callback='onSubmit'>{% trans "Log in" %}</button>
+                            <button type="submit" class="btn btn-block login-btn primaryAction mt-4g-recaptcha" data-sitekey="6LcN6bEZAAAAAARRmS9wQ51z5dG5JdWyhxbPRBjA" data-callback='onSubmit' id="LoginIn">{% trans "Log in" %}</button>
                         <hr class="my-4">
                         </form>
                         {% include "allauth/social_login.html" %}
