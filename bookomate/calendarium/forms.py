@@ -1,7 +1,9 @@
-from models import Event
-from django.forms import ModelForm
+from .models import Event
+from django.forms import ModelForm, DateField
+from datetime import date
+TIME_FORMAT = '%d.%m.%Y'
 
-class EventForm():
+class EventForm(ModelForm):
     class Meta:
         model = Event
-        fields = ['day', 'start time', 'end time']
+        fields = ['event_name', 'event_location', 'start_date', 'start_time', 'end_time']

@@ -1,7 +1,8 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
 from .calendar import EventCalendar
-from forms import EventForm
+from .models import Event
+from .forms import EventForm
 from django.utils.safestring import mark_safe
 
 
@@ -30,7 +31,10 @@ def calendar_view(request, year: int = None, month: int = None):
         prev_month = 12
     params = {"calendar": mark_safe(html), "next_year": next_year, "prev_year": prev_year, "next_month": next_month, "prev_month": prev_month}
     return render(request, "calendarium/calendar.html", params)
+
 def event_creation_view(request):
     if request.method == "GET":
-        params = {"form": EventForm}
+        event = Event.objects.get(pk = 1)
+        form = EventForm(instance = event)
+        params = {"form": form}
         return render(request, "calendarium/eventCreation.html", params)
