@@ -88,9 +88,9 @@ const durationButtonListener = function() {
 
 $(() => {
     let openedTime = currentTime();
-    // $("#start_date").val($("#start_date").val() || dateToday);
-    // $("#start_time").val($("#start_time").val() || openedTime);
-    // $("#end_time").val($("#end_time").val() || calculateEnd(openedTime, 60));
+    $("#start_date").val($("#start_date").val() || dateToday);
+    $("#start_time").val($("#start_time").val() || openedTime);
+    $("#end_time").val($("#end_time").val() || calculateEnd(openedTime, 60));
     updateDurationButtons();
     $("#end_time").on("change", updateDurationButtons);
     $(".duration span").on("click", durationButtonListener);

@@ -3,8 +3,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body {
-}
 
 .fcontainer {
   display: flex;
@@ -13,9 +11,6 @@ body {
 
 .inputs {
   width: 650px;
-}
-
-.inputs form {
   display: flex;
   flex-direction: column;
 }

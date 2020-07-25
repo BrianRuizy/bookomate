@@ -1,5 +1,7 @@
 from datetime import datetime
-from django.shortcuts import render, redirect
+from django.utils.dateparse import parse_date
+from django.shortcuts import render, redirect, HttpResponse
+from django.views.generic.edit import CreateView
 from .calendar import EventCalendar
 from .models import Event
 from .forms import EventForm
@@ -32,9 +34,14 @@ def calendar_view(request, year: int = None, month: int = None):
     params = {"calendar": mark_safe(html), "next_year": next_year, "prev_year": prev_year, "next_month": next_month, "prev_month": prev_month}
     return render(request, "calendarium/calendar.html", params)
 
-def event_creation_view(request):
+def event_create(request):
     if request.method == "GET":
-        event = Event.objects.get(pk = 1)
-        form = EventForm(instance = event)
-        params = {"form": form}
-        return render(request, "calendarium/eventCreation.html", params)
+        form = EventForm()
+        context = {"form": form}
+        return render(request, "calendarium/event_form.html", context)
+    if request.method == "POST":
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save(commit=False)
+            event._user = request.user
+            event.save()
