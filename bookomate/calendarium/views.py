@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.utils.dateparse import parse_date
-from django.shortcuts import render, redirect, HttpResponse
+from django.http import HttpResponseForbidden
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.views.generic.edit import CreateView
 from .calendar import EventCalendar
 from .models import Event
@@ -45,3 +46,20 @@ def event_create(request):
             event = form.save(commit=False)
             event._user = request.user
             event.save()
+def event_edit_create(request, id = None):
+    if id:
+        event = get_object_or_404(Event, pk = id)
+        if event._user != request.user:
+            return HttpResponseForbidden()
+    else:
+        event = Event(_user = request.user)
+    form = EventForm(request.POST    or None, instance = event)
+
+    if request.method == "POST" and form.is_valid():
+        form.save()
+    context = {"form": form}
+    return render(request, "calendarium/event_form.html", context)
+
+
+
+
