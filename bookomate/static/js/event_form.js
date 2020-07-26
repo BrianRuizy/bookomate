@@ -85,6 +85,13 @@ const durationButtonListener = function() {
     updateEndTime(duration);
     updateDurationButtons()
 };
+const deleteAction = function() {
+    if(confirm("Are you sure you would like to delete this event?")) {
+        window.location.href = window.location.href + '/de'
+        return false;
+    } else {
+    };
+};
 
 $(() => {
     let openedTime = currentTime();
@@ -95,4 +102,6 @@ $(() => {
     $("#end_time").on("change", updateDurationButtons);
     $(".duration span").on("click", durationButtonListener);
     $("#inp_other").on("change", durationButtonListener);
+    $("#btn_delete").on("click", deleteAction);
+    
 });

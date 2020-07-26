@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.utils.dateparse import parse_date
 from django.http import HttpResponseForbidden
-from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404, HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from .calendar import EventCalendar
 from .models import Event
@@ -35,25 +35,18 @@ def calendar_view(request, year: int = None, month: int = None):
     params = {"calendar": mark_safe(html), "next_year": next_year, "prev_year": prev_year, "next_month": next_month, "prev_month": prev_month}
     return render(request, "calendarium/calendar.html", params)
 
-def event_create(request):
-    if request.method == "GET":
-        form = EventForm()
-        context = {"form": form}
-        return render(request, "calendarium/event_form.html", context)
-    if request.method == "POST":
-        form = EventForm(request.POST)
-        if form.is_valid():
-            event = form.save(commit=False)
-            event._user = request.user
-            event.save()
-def event_edit_create(request, id = None):
+
+def event_edit_create(request, id=None, template="calendarium/event_form.html"):
+    # Branch so that the form is not prepopulated (this is done by the managing javascript)
+    if not id and request.method == "GET":
+        return render(request, template, {})
     if id:
         event = get_object_or_404(Event, pk = id)
-        if event._user != request.user:
+        if event.user != request.user:
             return HttpResponseForbidden()
     else:
-        event = Event(_user = request.user)
-    form = EventForm(request.POST    or None, instance = event)
+        event = Event(user = request.user)
+    form = EventForm(request.POST or None, instance = event)
 
     if request.method == "POST" and form.is_valid():
         form.save()
@@ -61,5 +54,14 @@ def event_edit_create(request, id = None):
     return render(request, "calendarium/event_form.html", context)
 
 
-
-
+def event_delete(request, id= None):
+    if id:
+        event = get_object_or_404(Event, pk=id)
+        if event.user != request.user:
+            return HttpResponseForbidden()
+        event.delete()
+        return HttpResponseRedirect("/")
+    else:
+        return HttpResponseRedirect("/")
+    
+    

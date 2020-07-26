@@ -14,8 +14,4 @@ class Event(models.Model):
     end_date = models.DateField('Event date', help_text='The date the event will be on', default=timezone.now)
     start_time = models.TimeField('Starting time', help_text='The time the event will start', default=timezone.now)
     end_time = models.TimeField('Final time', help_text='The time the event will end', default = one_hour_after())
-    _user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=False, on_delete=models.CASCADE)
-
-    @staticmethod
-    def one_hour():
-        return timezone.now() + timezone.timedelta(days=1)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=False, on_delete=models.CASCADE)

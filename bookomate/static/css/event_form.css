@@ -29,6 +29,9 @@
     text-align: center;
     background-color: lightgrey;
 }
+#inp_other {
+  width: 80px;
+}
 .duration span:hover {
     background-color: white;
 }
