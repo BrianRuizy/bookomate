@@ -93,6 +93,13 @@ const deleteAction = function() {
     };
 };
 
+const backAction = function() {
+    if(confirm("Are you sure you would like to go back, \n this will delete all content")) {
+        window.location.href = window.location.href + '../';
+        return false;
+    };
+}
+
 $(() => {
     let openedTime = currentTime();
     $("#start_date").val($("#start_date").val() || dateToday);
@@ -103,5 +110,6 @@ $(() => {
     $(".duration span").on("click", durationButtonListener);
     $("#inp_other").on("change", durationButtonListener);
     $("#btn_delete").on("click", deleteAction);
+    $("#btn_back").on("click", backAction)
     
 });
