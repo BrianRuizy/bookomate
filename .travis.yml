@@ -8,7 +8,7 @@ python:
 
 before_install:
   - export DJANGO_SETTINGS_MODULE=bookomate.settings.travis
-  - export DATABASE_URL="DATABASE_URL='postgres://postgres:@localhost:5432/travis_ci_db'"
+  - export DATABASE_URL='postgres://postgres:@localhost:5432/travis_ci_db'
   - export SECRET_KEY="irrelevant"
 
 install:
