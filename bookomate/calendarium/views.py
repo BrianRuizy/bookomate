@@ -36,14 +36,14 @@ def calendar_view(request, year: int = None, month: int = None):
     return render(request, "calendarium/calendar.html", params)
 
 
-def event_edit_create(request, id=None, template="calendarium/event_form.html"):
+def event_edit_create(request, pk=None, template="calendarium/event_form.html"):
     # Branch so that the form is not prepopulated (this is done by the managing javascript)
-    if not id and request.method == "GET":
+    if not pk and request.method == "GET":
         return render(request, template, {})
-    if id:
-        event = get_object_or_404(Event, pk = id)
+    if pk:
+        event = get_object_or_404(Event, pk = pk)
         if event.user != request.user:
-            return HttpResponseForbidden()
+            return HttpResponseRedirect('/accounts/login', )
     else:
         event = Event(user = request.user)
     form = EventForm(request.POST or None, instance = event)
@@ -54,14 +54,19 @@ def event_edit_create(request, id=None, template="calendarium/event_form.html"):
     return render(request, "calendarium/event_form.html", context)
 
 
-def event_delete(request, id= None):
-    if id:
-        event = get_object_or_404(Event, pk=id)
+def event_delete(request, pk= None):
+    if pk:
+        event = get_object_or_404(Event, pk=pk)
         if event.user != request.user:
-            return HttpResponseForbidden()
+            return HttpResponseRedirect('/accounts/login', )
         event.delete()
         return HttpResponseRedirect("/")
     else:
         return HttpResponseRedirect("/")
-    
-    
+
+def event_list(request):
+    if request.user.is_authenticated:
+        context = {"events": Event.objects.filter(user=request.user)}
+        return render(request, "calendarium/event_list.html", context)
+    else: 
+        return HttpResponseRedirect('/accounts/login', )
