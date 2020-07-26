@@ -87,7 +87,7 @@ const durationButtonListener = function() {
 };
 const deleteAction = function() {
     if(confirm("Are you sure you would like to delete this event?")) {
-        window.location.href = window.location.href + '/de'
+        window.location.href = window.location.href + '/delete'
         return false;
     } else {
     };
