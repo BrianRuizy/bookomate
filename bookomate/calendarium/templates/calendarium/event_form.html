@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+{% load socialaccount %}
+{% block title %}BookOmate Event Creation{% endblock title %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/event_form.css' %}">
+{% endblock stylesheets %}
+{% block content %}
+{% include "includes/navbar.html" %}
+<div class="section">
+    <form method="POST">
+        {% csrf_token %}
+    <div class="container col-9">
+        <div class = "d-flex justify-content-between">
+            <span><h2>Event Form</h2></span>
+            <span>
+                <button type="submit" class="btn btn-primary">Save</button>
+                {% if form != None %}
+                <button id="btn_delete" class="btn btn-danger">Delete</button>
+                {% else %}
+                <button id="btn_back" class="btn btn-danger">Cancel</button>
+                {% endif %}
+            </span>
+            
+        </div>
+        
+        <div class="fcontainer">
+            <div class=inputs>
+                <span>
+                    <label>Event Name</label>
+                    {% if form.event_name.value != None %}
+                    <input name="event_name" type="text" value = "{{ form.event_name.value }}">
+                    {% else %}
+                    <input name="event_name" type="text">
+                    {% endif %}
+                </span>
+                <span>
+                    <label>Location</label>
+                    {% if form.event_location.value != None %}
+                    <input name="event_location" type="text" value = {{ form.event_location.value }}>
+                    {% else %}
+                    <input name="event_location" type="text">
+                    {% endif %}
+                </span>
+                <span>
+                    <label>Date</label>
+                    {% if form.start_date.value != None %}
+                    <input name="start_date" type="date" id = "start_date" value = "{{ form.start_date.value | date:'Y-m-d'}}">
+                    {% else %}
+                    <input name="start_date" type="date" id="start_date">
+                    {% endif %}
+                </span>
+                <span>
+                    <label>Start Time</label>
+                    {% if form.start_time.value != None %}
+                    <input id="start_time" name="start_time" type="time" value = '{{ form.start_time.value | date:"H:i"}}'>
+                    {% else %}
+                    <input id="start_time" name="start_time" type="time">
+                    {% endif %}
+
+                    <label>End Time</label>
+                    {% if form.end_time.value != None %}
+                    <input id="end_time" name="end_time" type="time" value = "{{ form.end_time.value | date:'H:i'}}">
+                    {% else %}
+                    <input id="end_time" name="end_time" type="time">
+                    {% endif %}
+                </span>
+                <div class="duration">
+                    <span class="active" id="btn_30m">30 Minutes</span>
+                    <span id="btn_1h">1 Hour</span>
+                    <span id="btn_2h">2 Hours</span>
+                    <span id="btn_other">Other<br><input id="inp_other" type="number" min="0" max="1440"></span>
+                </div>
+                
+            </div>
+            <div class="events_list">
+                <!-- Placeholder for version 0.2 additions -->
+                <!-- <table>
+                    <tr>
+                        <td><b>12:00 - 14:00</b></td>
+                        <td>Football: North Melbounre vs Gold Coast</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Marvel Stadium</td>
+                    </tr>
+                </table> -->
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+{%endblock content %}
+{% block javascripts %}
+<script src="{% static 'js/event_form.js' %}"></script>
+{% endblock javascripts %}

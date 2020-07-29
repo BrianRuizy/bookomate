@@ -11,7 +11,7 @@ class EventCalendar(HTMLCalendar):
         """
         Return a day as a table cell.
         """
-        events_from_day = events.filter(day__day=day)
+        events_from_day = events.filter(start_date__day=day)
         events_html = "<ul>"
         for event in events_from_day:
             events_html += f"{event.start_time} -- {event.end_time}" + "<br>"
@@ -34,7 +34,7 @@ class EventCalendar(HTMLCalendar):
         Return a formatted month as a table.
         """
 
-        events = Event.objects.filter(day__month=themonth)
+        events = Event.objects.filter(start_date__month=themonth)
 
         v = [
             '<table border="0" cellpadding="0" cellspacing="0" class="month">',

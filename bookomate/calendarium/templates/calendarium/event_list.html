@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+
+{% block title %}Events{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{% include "includes/navbar.html" %}
+<div class="section">
+    <div class="container col-9">
+        <div class = "d-flex justify-content-between">
+            <span><h2>{{  user.first_name | default:user.username }}'s Events</h2></span>
+            <span><button style = "margin-right: auto" class = "btn btn-primary" onclick = "window.location.href = './add'; return false">Add New Event</button></span>
+        </div>
+        
+        <table>
+            {% for event in events %}
+                <tr onclick="window.location.href = '{{ event.id }}'; return false;">
+                    <td><b>{{ event.start_date |date:'D M d, Y' }}</b></td>
+                    <td>{{ event.event_name }}</td>
+                </tr>
+                <tr onclick="window.location.href = '{{ event.id }}'; return false;">
+                    <td>{{ event.start_time | time }} - {{ event.end_time| time}}</td>
+                    <td>{{ event.event_location }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% else %}
+{% include "includes/navbar-landing.html" %}
+{% include "includes/landing.html" %}
+{% endif %}
+{% endblock content %}

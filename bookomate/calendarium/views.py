@@ -1,6 +1,11 @@
 from datetime import datetime
-from django.shortcuts import render, redirect
+from django.utils.dateparse import parse_date
+from django.http import HttpResponseForbidden
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404, HttpResponseRedirect
+from django.views.generic.edit import CreateView
 from .calendar import EventCalendar
+from .models import Event
+from .forms import EventForm
 from django.utils.safestring import mark_safe
 
 
@@ -29,3 +34,40 @@ def calendar_view(request, year: int = None, month: int = None):
         prev_month = 12
     params = {"calendar": mark_safe(html), "next_year": next_year, "prev_year": prev_year, "next_month": next_month, "prev_month": prev_month}
     return render(request, "calendarium/calendar.html", params)
+
+
+def event_edit_create(request, pk=None, template="calendarium/event_form.html"):
+    # Branch so that the form is not prepopulated (this is done by the managing javascript)
+    if not pk and request.method == "GET":
+        return render(request, template, {})
+    if pk:
+        event = get_object_or_404(Event, pk = pk)
+        if event.user != request.user:
+            return HttpResponseRedirect('/accounts/login', )
+    else:
+        event = Event(user = request.user)
+    form = EventForm(request.POST or None, instance = event)
+
+    if request.method == "POST" and form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/event")
+    context = {"form": form}
+    return render(request, "calendarium/event_form.html", context)
+
+
+def event_delete(request, pk= None):
+    if pk:
+        event = get_object_or_404(Event, pk=pk)
+        if event.user != request.user:
+            return HttpResponseRedirect('/accounts/login', )
+        event.delete()
+        return HttpResponseRedirect("/")
+    else:
+        return HttpResponseRedirect("/")
+
+def event_list(request):
+    if request.user.is_authenticated:
+        context = {"events": Event.objects.filter(user=request.user)}
+        return render(request, "calendarium/event_list.html", context)
+    else: 
+        return HttpResponseRedirect('/accounts/login', )

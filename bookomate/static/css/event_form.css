@@ -1,0 +1,40 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fcontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputs {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+.duration {
+    display: flex;
+}
+.duration span {
+    padding-top: 10px;
+    height: 90px;
+    padding-bottom: 10px;
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 120px;
+    margin: 10px;
+    text-align: center;
+    background-color: lightgrey;
+}
+#inp_other {
+  width: 80px;
+}
+.duration span:hover {
+    background-color: white;
+}
+.duration span.active {
+    background-color: lightgreen;
+}
