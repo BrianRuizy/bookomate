@@ -22,15 +22,15 @@
 
 Coming soon!
 
-## Installation
+## Installation:
 
-### Dependencies
+### Dependencies:
 
 These things will need to be installed before developing BookOMate.
 - **PostgreSQL** Is the database used by BookOMate and installation of python dependencies will not work if [PostgreSQL](https://www.postgresql.org/download/) is not installed.
 On Mac Postgresql can be installed using brew ```brew install postgresql```. Windows users can install it with the installer ensuring that postgresql is added to the system path.
 
-### Environment Setup
+### Environment Setup:
 
 Get the project running, and start coding in just 5 quick steps.
 
@@ -52,7 +52,7 @@ Get the project running, and start coding in just 5 quick steps.
    env\Scripts\activate  # Windows
    ```
 
-3. Install dependencies
+3. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
@@ -64,14 +64,14 @@ Get the project running, and start coding in just 5 quick steps.
 
     make sure you exported the following environment variables
 
-   For Linux/Mac use:
+   For Linux/Mac use:-
 
    ```
    export DEBUG=<True or False>
    export SECRET_KEY='PUT-YOUR-SECRET-KEY-HERE'
    export DATABASE_URL='postgres://USER:PASSWORD@HOST:PORT/DB_NAME'
    ```
-   For Windows use:
+   For Windows use:-
 
    ```
    set DEBUG=<True or False>
@@ -79,7 +79,7 @@ Get the project running, and start coding in just 5 quick steps.
    set DATABASE_URL='postgres://USER:PASSWORD@HOST:PORT/DB_NAME'
    ```
 
-5. Migrate your database
+5. Migrate your database:
 
    ```bash
    python manage.py migrate
@@ -96,11 +96,11 @@ Get the project running, and start coding in just 5 quick steps.
    Quit the server with CONTROL-C.
    ```
 
-## Contribution
+## Contribution:
 
 Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
 
-### Contributors
+### Contributors:
 
 This project exists thanks to all the people who [contribute](CONTRIBUTING.md)!
 
